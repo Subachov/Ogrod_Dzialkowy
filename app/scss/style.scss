@@ -4,3 +4,45 @@
 @import 'libs';
 @import 'global';
 
+.header{
+    padding: 40px 0;
+    &__inner{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.logo{
+    width: 50px;
+    height: auto;
+}
+
+.menu{
+    &__list{
+        display: flex;
+        text-transform: uppercase;
+        
+    }
+    &__list-item + .menu__list-item{
+        padding-left: 50px;
+    }
+    &__list-link{
+        color: $title-color;
+        padding-bottom: 1px;
+        transition: all .3s;
+        white-space: nowrap;
+        @extend %quicksand-400;
+        &:hover{
+            color: $accent-color;
+            border-bottom: 1px solid $accent-color;
+            @extend %quicksand-500;
+        }
+
+    }
+    &__list-link--active{
+        color: $accent-color;
+        border-bottom: 1px solid $accent-color;
+        @extend %quicksand-500;
+    }
+}
